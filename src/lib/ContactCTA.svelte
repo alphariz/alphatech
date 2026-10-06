@@ -222,6 +222,10 @@
     transition: border-color var(--transition-fast);
   }
 
+  .form-textarea {
+    resize: none;
+  }
+
   .form-input:focus, .form-textarea:focus, .form-select:focus {
     border-color: var(--accent-cyan);
   }
