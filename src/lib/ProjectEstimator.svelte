@@ -198,7 +198,7 @@
     display: grid;
     grid-template-columns: 1.3fr 0.7fr;
     gap: 3rem;
-    align-items: stretch;
+    align-items: start;
   }
 
   .form-group-step {
@@ -354,10 +354,6 @@
     background: var(--bg-card);
     border: 1px solid var(--border-highlight);
     box-shadow: var(--shadow-glow);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 100%;
   }
 
   .summary-header {
