@@ -1,9 +1,9 @@
 <script>
   import { onMount } from 'svelte';
 
-  let isScrolled = false;
-  let mobileMenuOpen = false;
-  let isDarkMode = true;
+  let isScrolled = $state(false);
+  let mobileMenuOpen = $state(false);
+  let isDarkMode = $state(false);
 
   const navLinks = [
     { label: 'Beranda', href: '#hero' },
@@ -20,6 +20,18 @@
       isScrolled = window.scrollY > 30;
     };
     window.addEventListener('scroll', handleScroll);
+
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+      isDarkMode = true;
+      document.documentElement.setAttribute('data-theme', 'dark');
+      document.documentElement.classList.add('dark');
+    } else {
+      isDarkMode = false;
+      document.documentElement.setAttribute('data-theme', 'light');
+      document.documentElement.classList.remove('dark');
+    }
+
     return () => window.removeEventListener('scroll', handleScroll);
   });
 
@@ -28,9 +40,11 @@
     if (isDarkMode) {
       document.documentElement.setAttribute('data-theme', 'dark');
       document.documentElement.classList.add('dark');
+      localStorage.setItem('theme', 'dark');
     } else {
       document.documentElement.setAttribute('data-theme', 'light');
       document.documentElement.classList.remove('dark');
+      localStorage.setItem('theme', 'light');
     }
   }
 
@@ -42,7 +56,7 @@
 <header class="navbar-wrapper {isScrolled ? 'scrolled' : ''}">
   <div class="container navbar-container">
     <!-- Brand Logo -->
-    <a href="#hero" class="brand-logo" on:click={closeMobileMenu}>
+    <a href="#hero" class="brand-logo" onclick={closeMobileMenu}>
       <div class="logo-icon">
         <svg width="28" height="28" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M16 2L3 9.5V22.5L16 30L29 22.5V9.5L16 2Z" stroke="url(#logo-grad)" stroke-width="2.5" stroke-linejoin="round"/>
@@ -77,8 +91,9 @@
     <!-- Action Group (Theme Switcher + WhatsApp CTA) -->
     <div class="navbar-actions">
       <button 
+        type="button"
         class="theme-toggle-btn" 
-        on:click={toggleTheme}
+        onclick={toggleTheme}
         aria-label="Toggle Dark/Light Mode"
         title="Ubah Tema"
       >
@@ -109,7 +124,7 @@
       <!-- Mobile Hamburger Toggle -->
       <button 
         class="mobile-toggle" 
-        on:click={() => mobileMenuOpen = !mobileMenuOpen}
+        onclick={() => mobileMenuOpen = !mobileMenuOpen}
         aria-label="Toggle Mobile Menu"
       >
         <span class="hamburger-line {mobileMenuOpen ? 'open' : ''}"></span>
@@ -124,7 +139,7 @@
     <div class="mobile-drawer">
       <nav class="mobile-nav">
         {#each navLinks as link}
-          <a href={link.href} class="mobile-nav-link" on:click={closeMobileMenu}>
+          <a href={link.href} class="mobile-nav-link" onclick={closeMobileMenu}>
             {link.label}
           </a>
         {/each}
@@ -133,7 +148,7 @@
           target="_blank" 
           rel="noopener noreferrer" 
           class="btn btn-whatsapp mobile-cta"
-          on:click={closeMobileMenu}
+          onclick={closeMobileMenu}
         >
           Konsultasi via WhatsApp (0878-2869-0059)
         </a>
