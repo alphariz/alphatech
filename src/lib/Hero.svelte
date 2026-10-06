@@ -279,9 +279,9 @@
   /* Visual Showcase Card */
   .tech-showcase-card {
     padding: 1.5rem;
-    background: rgba(14, 19, 31, 0.85);
-    border: 1px solid rgba(0, 242, 254, 0.2);
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 0 0 30px rgba(0, 242, 254, 0.15);
+    background: var(--bg-card);
+    border: 1px solid var(--border-highlight);
+    box-shadow: var(--shadow-glow);
   }
 
   .card-window-bar {
@@ -342,7 +342,7 @@
   }
 
   .metric-box {
-    background: rgba(255, 255, 255, 0.03);
+    background: var(--bg-dark-surface);
     border: 1px solid var(--border-subtle);
     border-radius: var(--radius-sm);
     padding: 1.15rem;

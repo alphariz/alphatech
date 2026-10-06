@@ -109,8 +109,9 @@
 
   .contact-main-card {
     padding: 3.5rem;
-    background: rgba(14, 19, 31, 0.9);
+    background: var(--bg-card);
     border: 1px solid var(--border-highlight);
+    box-shadow: var(--shadow-glow);
   }
 
   .contact-grid {
@@ -178,7 +179,7 @@
   }
 
   .contact-form-box {
-    background: rgba(255, 255, 255, 0.02);
+    background: var(--bg-dark-surface);
     border: 1px solid var(--border-subtle);
     border-radius: var(--radius-md);
     padding: 2rem;
@@ -208,16 +209,21 @@
     color: var(--text-muted);
   }
 
-  .form-select {
+  .form-select, .form-input, .form-textarea {
     width: 100%;
     padding: 0.85rem 1.1rem;
-    background: var(--bg-dark-surface);
+    background: var(--bg-card);
     border: 1px solid var(--border-subtle);
     border-radius: var(--radius-sm);
     color: var(--text-main);
     font-family: var(--font-primary);
     font-size: 0.9rem;
     outline: none;
+    transition: border-color var(--transition-fast);
+  }
+
+  .form-input:focus, .form-textarea:focus, .form-select:focus {
+    border-color: var(--accent-cyan);
   }
 
   @media (max-width: 900px) {

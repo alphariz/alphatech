@@ -222,7 +222,7 @@
     align-items: flex-start;
     gap: 0.75rem;
     padding: 1rem;
-    background: rgba(255, 255, 255, 0.03);
+    background: var(--bg-dark-surface);
     border: 1px solid var(--border-subtle);
     border-radius: var(--radius-sm);
     cursor: pointer;
@@ -283,7 +283,7 @@
     align-items: center;
     gap: 0.6rem;
     padding: 0.75rem 1rem;
-    background: rgba(255, 255, 255, 0.02);
+    background: var(--bg-dark-surface);
     border: 1px solid var(--border-subtle);
     border-radius: var(--radius-sm);
     color: var(--text-muted);
@@ -328,7 +328,7 @@
   .form-input, .form-textarea {
     width: 100%;
     padding: 0.85rem 1.1rem;
-    background: rgba(255, 255, 255, 0.04);
+    background: var(--bg-dark-surface);
     border: 1px solid var(--border-subtle);
     border-radius: var(--radius-sm);
     color: var(--text-main);
@@ -345,8 +345,9 @@
   /* Summary Card Right */
   .summary-card {
     padding: 2rem;
-    background: rgba(14, 19, 31, 0.9);
+    background: var(--bg-card);
     border: 1px solid var(--border-highlight);
+    box-shadow: var(--shadow-glow);
   }
 
   .summary-header {
