@@ -129,6 +129,7 @@
               bind:value={projectNotes}
               rows="3"
               class="form-textarea"
+              readonly
             ></textarea>
           </div>
         </div>

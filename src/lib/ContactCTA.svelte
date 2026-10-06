@@ -73,7 +73,7 @@
 
             <div class="form-group">
               <label for="msg">Pesan / Gambaran Singkat</label>
-              <textarea id="msg" placeholder="Tuliskan kebutuhan atau pertanyaan Anda..." bind:value={message} rows="3" class="form-textarea"></textarea>
+              <textarea id="msg" placeholder="Tuliskan kebutuhan atau pertanyaan Anda..." bind:value={message} rows="3" class="form-textarea" readonly></textarea>
             </div>
 
             <button type="submit" class="btn btn-whatsapp btn-full">
