@@ -7,12 +7,12 @@
 
   const navLinks = [
     { label: 'Beranda', href: '#hero' },
-    { label: 'Tentang Kami', href: '#tentang' },
+    { label: 'Tentang', href: '#tentang' },
     { label: 'Layanan', href: '#layanan' },
     { label: 'Keunggulan', href: '#keunggulan' },
     { label: 'Alur Kerja', href: '#alur-kerja' },
-    { label: 'Kalkulator Proyek', href: '#estimasi' },
-    { label: 'Hubungi Kami', href: '#kontak' }
+    { label: 'Estimator', href: '#estimasi' },
+    { label: 'Kontak', href: '#kontak' }
   ];
 
   onMount(() => {
@@ -224,14 +224,15 @@
   .desktop-nav {
     display: flex;
     align-items: center;
-    gap: 1.75rem;
+    gap: 1.25rem;
   }
 
   .nav-link {
     color: var(--text-muted);
     text-decoration: none;
-    font-size: 0.925rem;
+    font-size: 0.9rem;
     font-weight: 500;
+    white-space: nowrap;
     transition: color var(--transition-fast);
     position: relative;
   }
